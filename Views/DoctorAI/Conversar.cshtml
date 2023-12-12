@@ -1,0 +1,18 @@
+﻿<div class="col-md-12">
+    <div class="well well-sm">
+        <form asp-controller="DoctorAI" asp-action="Conversar" method="post">
+            <input class="form-control mb-3" type="text" placeholder="Introducir mensaje" name="Prompt" />
+
+            <br />
+            <p>
+                @Html.Raw(ViewBag.Respuesta)
+            </p>
+            <br />
+
+            <div class="d-grid gap-2 mb-3">
+                <button name="submitButton" class="btn btn-primary mb-" type="submit" value="Generar">Enviar</button>
+                <button name="submitButton" class="btn btn-primary" type="submit" value="Clear">Volver a llenar datos</button>
+            </div>
+        </form>
+    </div>
+</div>

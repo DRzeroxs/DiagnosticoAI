@@ -1,0 +1,70 @@
+﻿<style>
+    .header {
+        color: #36A0FF;
+        font-size: 27px;
+        padding: 10px;
+    }
+
+    .bigicon {
+        font-size: 35px;
+        color: #36A0FF;
+    }
+
+</style>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-.....(hash)....." crossorigin="anonymous" />
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+</head>
+<body>
+
+    <div class="container-fluid mb-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="well well-sm">
+                    <form asp-controller="DoctorAI" asp-action="Index" method="post">
+                        <legend class="text-center header">Datos del Paciente</legend>
+
+                        <div class="icon  mx-auto align-items-center">
+                            <span class="mb-3 text-center mr-2"><i class="fa fa-user bigicon"></i></span>
+                            <input class="form-control mb-3 col-md-8" type="text" placeholder="Nombre" required name="nombre" />
+                        </div>
+                        <div class="icon  mx-auto align-items-center">
+                            <span class="mb-3 text-center mr-2"><i class="fa fa-user bigicon"></i></span>
+                            <input class="form-control mb-3 col-md-8" type="text" placeholder="Apellidos" required name="apellido" />
+                        </div>
+                        <div class="icon  mx-auto align-items-center">
+                            <span class="mb-3 text-center mr-2"><i class="fa fa-calendar bigicon"></i></span>
+                            <input class="form-control mb-3 col-md-8" type="number" min="1" placeholder="Edad" required name="edad" />
+                        </div>
+                        <div class="icon  mx-auto align-items-center">
+                            <span class="mb-3 text-center mr-2"><i class="fa fa-map-pin bigicon"></i></span>
+                            <input class="form-control mb-3 col-md-8" type="text" placeholder="Direccion" required name="direccion" />
+                        </div>
+                        <div class="icon  mx-auto align-items-center">
+                            <span class="mb-3 text-center mr-2"><i class="fa fa-envelope bigicon"></i></span>
+                            <input class="form-control mb-3 col-md-8" type="email" placeholder="Email" required name="email" />
+                        </div>
+                        <div class="icon  mx-auto align-items-center">
+                            <span class="mb-3 text-center mr-2"><i class="fa fa-phone bigicon"></i></span>
+                            <input class="form-control mb-3 col-md-8" type="text" placeholder="Telefono" pattern="[0-9]{10}" required name="telefono" />
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label" for="sintomas">Síntomas (ingresa uno por línea):</label>
+                            <textarea class="form-control" id="sintomas" name="sintomas" rows="4" cols="50" required></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2 mb-3">
+                            <button class="btn btn-primary" type="submit">Diagnosticar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
