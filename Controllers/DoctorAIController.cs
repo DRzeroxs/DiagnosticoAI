@@ -10,7 +10,7 @@ namespace DiagnosticoAI.Controllers
     {
         public static string _EndPoint = "https://api.openai.com/";
         public static string _URI = "v1/chat/completions";
-        public static string _APIKey = "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";
+        public static string _APIKey = "Your_APIKEY_HERE";
 
         public IActionResult Index()
         {
@@ -50,9 +50,9 @@ namespace DiagnosticoAI.Controllers
             oSolicitud.AddJsonBody(jsonString);
 
             //Generar la respuestas
-            //var oRespuesta = oCliente.Post<Response>(oSolicitud);
+            var oRespuesta = oCliente.Post<Response>(oSolicitud);
 
-            //strRespuesta = oRespuesta.choices[0].message.content;
+            strRespuesta = oRespuesta.choices[0].message.content;
 
             ViewBag.Respuesta = strRespuesta;
 
